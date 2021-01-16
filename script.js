@@ -6,8 +6,12 @@ function createTodo(text) {
 
 
 $(document).ready(function () {
+    var checkedItems = $('.todo-list input[type=checkbox]:not(:checked)').length;
+    $('#todo-items').html(checkedItems + " ");
+    
     var buttonLightMode = $('body');
-    $('.btn-light-mode').click(function() {
+    $('.btn-light-mode').click(function(e) {
+        e.preventDefault();
         if ($('body').hasClass('dark-mode')) {
             $('body').removeClass('dark-mode');
             $('#todo-icon').attr('src', '/images/icon-sun.svg');
@@ -31,9 +35,75 @@ $(document).ready(function () {
         } else {
             $(this).parent().find('label').removeClass('isDone');
         }
+        var checkedItems = $('.todo-list input[type=checkbox]:not(:checked)').length;
+        $('#todo-items').html(checkedItems + " ");
+
     })
     
     $('.todo-list label').click(function(e) {
         e.preventDefault();
     })
+    
+    
+    var activeStates = $('.todo-filter a');
+    $('#delete-todo').click(function(e) {
+        e.preventDefault();
+        var completedItems = $('.todo-list input[type=checkbox]');
+        $(completedItems).each(function() {
+            if ($(this).is(':checked')) {
+                $(this).parent().remove();
+            }
+        })
+    });
+    
+    $('#all-todo').click(function(e) {
+        e.preventDefault();
+        
+        $(this).addClass('active');
+        $(activeStates).not(this).each(function() {
+            $(this).removeClass('active');
+        })
+        
+        var completedItems = $('.todo-list input[type=checkbox]');
+        $(completedItems).each(function() {
+            $(this).parent().show();
+        })
+    });
+    
+    $('#active-todo').click(function(e) {
+        e.preventDefault();
+        
+        $(this).addClass('active');
+        $(activeStates).not(this).each(function() {
+            $(this).removeClass('active');
+        })
+        
+        
+        var completedItems = $('.todo-list input[type=checkbox]');
+        $(completedItems).each(function() {
+            if (!($(this).is(':checked'))) {
+                $(this).parent().show();
+            } else {
+                $(this).parent().hide();
+            }
+        });
+    });
+    
+    $('#completed-todo').click(function(e) {
+        e.preventDefault();
+        
+        $(this).addClass('active');
+        $(activeStates).not(this).each(function() {
+            $(this).removeClass('active');
+        })
+        
+        var completedItems = $('.todo-list input[type=checkbox]');
+        $(completedItems).each(function() {
+            if ($(this).is(':checked')) {
+                $(this).parent().show();
+            } else {
+                $(this).parent().hide();
+            }
+        })
+    });
 });

@@ -52,7 +52,7 @@ input#checkbox-title {
     position: relative;
     margin-top: 1.25rem;
     margin-left: 1.25rem;
-       -webkit-appearance: none;
+    -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
     appearance: none;
@@ -81,11 +81,19 @@ input#todo-checkbox {
     background-position: 50% 50%;
 }
 
+.todo-status {
+    display: inline-flex;
+    align-items: baseline;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+}
 
 
 .todo-list li {
     padding: 1.25rem 1.25rem;
 }
+
 .todo-list label {
     margin-left: 1.25rem;
     color: hsl(235, 19%, 35%);
@@ -94,5 +102,50 @@ input#todo-checkbox {
 
 label.isDone {
     color: hsl(233, 11%, 84%);
+    text-decoration: line-through;
+}
+
+.todo-status {
+    color: hsl(233, 11%, 84%);
+}
+
+.todo-status a {
+    color: hsl(233, 11%, 84%);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.todo-status a.active {
+    color: hsl(220, 98%, 61%);
+}
+
+.todo-status a:hover {
+    text-decoration: none;
+}
+
+body.dark-mode .todo-add {
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 39%, 85%);
+}
+
+body.dark-mode .card {
+    border: 1px solid hsl(235, 24%, 19%);
+    background-color: hsl(235, 24%, 19%);
+}
+
+body.dark-mode .todo-list li {
+    background-color: hsl(235, 24%, 19%);
+    border: 1px solid hsl(234, 11%, 52%);
+    border-right:none;
+    border-left:none;
+}
+
+
+body.dark-mode .todo-list li label {
+    color: hsl(236, 33%, 92%);
+}
+
+body.dark-mode .todo-list li label.isDone {
+   color: hsl(233, 11%, 84%);
     text-decoration: line-through;
 }
