@@ -90,7 +90,7 @@ input#todo-checkbox {
 }
 
 
-.todo-list li {
+.todo-list li, .todo-tracker li {
     padding: 1.25rem 1.25rem;
 }
 
@@ -133,7 +133,7 @@ body.dark-mode .card {
     background-color: hsl(235, 24%, 19%);
 }
 
-body.dark-mode .todo-list li {
+body.dark-mode .todo-list li, body.dark-mode .todo-tracker li {
     background-color: hsl(235, 24%, 19%);
     border: 1px solid hsl(234, 11%, 52%);
     border-right: none;
@@ -162,15 +162,15 @@ body.dark-mode input#checkbox-title {
     display: none;
 }
 
-.todo-list li.mobile-only {
+.todo-tracker li.mobile-only {
     display: none;
 }
 
-.todo-list li.desktop-only {
+.todo-tracker li.desktop-only {
     border-bottom: none !important;
 }
 
-.todo-list li.desktop-only p, .todo-list li.mobile-only p{
+.todo-tracker li.desktop-only p, .todo-tracker li.mobile-only p{
     margin-bottom: 0;
 }
 
