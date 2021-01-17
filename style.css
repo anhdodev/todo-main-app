@@ -76,7 +76,7 @@ input#todo-checkbox {
 }
 
 .todo-list input[type="checkbox"]:checked {
-    background-image: url(/images/icon-check.svg), linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background-image: url(images/icon-check.svg), linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
