@@ -27,7 +27,7 @@
     <div class="container">
         <div class="main-container">
             <div class="row">
-                <div class="col-md-9 col-5">
+                <div class="col-md-9 col-7">
                     <h1 id="todo-title">TODO</h1>
                 </div>
                 <div class="col-md-3 col-5">
@@ -58,7 +58,7 @@
                                 <input id="todo-checkbox" type="checkbox" value=""><label for="todo-checkbox">Do Laundry</label>
                             </li>
 
-                            <li class="list-group-item">
+                            <li class="list-group-item desktop-only">
                                 <div class="todo-status">
                                     <p><span id="todo-items"></span>items left</p>
 
@@ -69,6 +69,18 @@
                                     </div>
 
                                     <a href="#" id="delete-todo">Clear Completed</a>
+                                </div>
+
+
+                            </li>
+                            
+                            <li class="list-group-item mobile-only">
+                                <div class="todo-status">
+                                    <div class="todo-filter-mobile">
+                                        <a id="all-todo" class="active" href="#">All</a>
+                                        <a id="active-todo" href="#">Active</a>
+                                        <a id="completed-todo" href="#">Completed</a>
+                                    </div>
                                 </div>
 
 

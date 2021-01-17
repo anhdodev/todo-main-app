@@ -136,8 +136,8 @@ body.dark-mode .card {
 body.dark-mode .todo-list li {
     background-color: hsl(235, 24%, 19%);
     border: 1px solid hsl(234, 11%, 52%);
-    border-right:none;
-    border-left:none;
+    border-right: none;
+    border-left: none;
 }
 
 
@@ -146,6 +146,67 @@ body.dark-mode .todo-list li label {
 }
 
 body.dark-mode .todo-list li label.isDone {
-   color: hsl(233, 11%, 84%);
+    color: hsl(233, 11%, 84%);
     text-decoration: line-through;
+}
+
+body.dark-mode input#todo-checkbox {
+    border: 1.5px solid hsl(234, 11%, 52%);
+}
+
+body.dark-mode input#checkbox-title {
+    border: 1.5px solid hsl(234, 11%, 52%);
+}
+
+.todo-filter-mobile {
+    display: none;
+}
+
+.todo-list li.mobile-only {
+    display: none;
+}
+
+.todo-list li.desktop-only {
+    border-bottom: none !important;
+}
+
+.todo-list li.desktop-only p, .todo-list li.mobile-only p{
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main-container {
+        width: 90vw;
+    }
+
+    .todo-filter {
+        display: none;
+    }
+
+    .todo-filter-mobile {
+        display: block;
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: space-around;
+        flex-direction: row;
+        flex-grow: 1;
+    }
+
+    li.mobile-only {
+        display: block;
+    }
+
+    #todo-title {
+        font-size: 30px;
+    }
+
+    #todo-icon {
+        margin: 0px;
+    }
 }
